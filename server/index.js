@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 
 //routes
-
+const authRoutes = require("./routes/auth.js");
 
 //required pacakages
 const passport = require("passport");
@@ -22,9 +22,15 @@ const database = require("./config/database");
 database.connect();
 
 //middlewares
-app.use(cors({credentials:true, exposedHeaders: ["set-cookie"], origin: process.env.FRONT_END_URL}));
-
+// app.use(cors({credentials:true, exposedHeaders: ["set-cookie"], origin: process.env.FRONT_END_URL}));
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+    // Add other CORS headers as needed
+    next();
+  });
+  
 app.use(express.json());
+app.use(express.static('public'));
 app.use(cookieParser());
 
 //for uploading files
@@ -38,7 +44,7 @@ app.use(
 cloudinaryConnect();
 
 //routes
-
+app.use("/auth",authRoutes);
 
 //def routes
 app.get("/",(req,res) =>{

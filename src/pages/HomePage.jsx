@@ -1,4 +1,3 @@
-
 import React from 'react'
 
 export const Home = () => {
@@ -8,3 +7,4 @@ export const Home = () => {
     </div>
   )
 }
+
