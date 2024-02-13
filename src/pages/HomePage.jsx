@@ -1,10 +1,15 @@
-import React from 'react'
 
-export const Home = () => {
+import React from 'react'
+import {Navbar} from '../components/Navbar'
+import {Slide} from '../components/Slide'
+import { Categories } from '../components/Categories'
+
+export const HomePage = () => {
   return (
-    <div>
-        Home
-    </div>
+    <>
+    <Navbar/>
+    <Slide/>
+    <Categories/>
+    </>
   )
 }
-
