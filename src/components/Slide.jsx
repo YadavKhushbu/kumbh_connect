@@ -3,7 +3,7 @@ import "../styles/Slide.scss"
 export const Slide = () => {
   return (
     <div className='slide'>
-      <h1>Welcome Home! Anywhere you roam<br/>Stay in the moment. Make your Memories</h1>
+      <h1>Kumbh Connect! Stay with us and<br/>connect yourself with the MahaKumbh 2025</h1>
     </div>
   )
 }

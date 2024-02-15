@@ -7,13 +7,13 @@ export const Categories = () => {
     <div className='categories'>
         <h1>Explore Top Categories</h1>
         <p>
-        Explore our wide range of vacation rentals that cater to all types of
-        travelers. Immerse yourself in the local culture, enjoy the comforts of
-        home, and create unforgettable memories in your dream destination.
+        Explore our wide range of rentals that cater to all types of pilgrims and
+        travelers. Immerse yourself in the festival, enjoy the comforts of
+        home, and create unforgettable memories in this mahakumbh with us.
         </p>
       
       <div className='categories_list'>
-        {categories?categories.slice(1,7).map((category,index)=>(
+        {categories?categories.slice(1,5).map((category,index)=>(
             <Link to="">
                 <div className='category' key={index}>
                   <img src={category.img} alt={category.label}/>
