@@ -7,8 +7,8 @@ import {
 } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-//import { setWishList } from "../redux/state";
-
+import { setWishList } from "../redux/state";
+ 
 const ListingCard = ({
   listingId,
   creator,
@@ -42,7 +42,7 @@ const ListingCard = ({
   const dispatch = useDispatch();
 
   /* ADD TO WISHLIST */
-  /*const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user);
   const wishList = user?.wishList || [];
 
   const isLiked = wishList?.find((item) => item?._id === listingId);
@@ -61,7 +61,7 @@ const ListingCard = ({
     const data = await response.json();
     dispatch(setWishList(data.wishList));
   } else { return }
-  };*/
+  };
 
   return (
     <div
@@ -126,7 +126,20 @@ const ListingCard = ({
           </p>
         </>
       )}
-
+       <button
+        className="favorite"
+        onClick={(e) => {
+          e.stopPropagation();
+          patchWishList();
+        }}
+        disabled={!user}
+      >
+        {isLiked ? (
+          <Favorite sx={{ color: "red" }} />
+        ) : (
+          <Favorite sx={{ color: "white" }} />
+        )}
+      </button>
     </div>
   );
 };

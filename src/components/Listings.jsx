@@ -35,6 +35,7 @@ const Listings = () => {
 
   useEffect(() => {
     getFeedListings();
+    // eslint-disable-next-line
   }, [selectedCategory]);
 
   return (
@@ -70,6 +71,7 @@ const Listings = () => {
               booking=false
             }) => (
               <ListingCard
+                key={_id}
                 listingId={_id}
                 creator={creator}
                 listingPhotoPaths={listingPhotoPaths}

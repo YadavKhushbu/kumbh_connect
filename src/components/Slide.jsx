@@ -1,5 +1,6 @@
 import React from 'react'
 import "../styles/Slide.scss"
+
 export const Slide = () => {
   return (
     <div className='slide'>
@@ -7,5 +8,3 @@ export const Slide = () => {
     </div>
   )
 }
-
-// export default Slide

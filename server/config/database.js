@@ -6,9 +6,7 @@ exports.connect = () => {
 mongoose.connect(
     process.env.MONGODB_URL,
     {
-        dbName:"Kumbh_Connect",
-        useNewUrlParser:true,
-        useUnifiedTopology:true,
+        dbName:"Kumbh_Connect"
     }
 ).then(() => console.log("DB Connected Successfully"))
 .catch( (error) => {

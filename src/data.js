@@ -109,6 +109,36 @@ export const categories = [
     icon: <GiCaveEntrance />,
     description: "This property is in an architectural area",
   },
+  {
+    img: "assets/camping_cat.jpg",
+    label: "Camping",
+    icon: <GiForestCamp />,
+    description: "This property offers camping activities!",
+  },
+  {
+    img: "assets/arctic_cat.webp",
+    label: "Arctic",
+    icon: <BsSnow />,
+    description: "This property is in arctic environment!",
+  },
+  {
+    img: "assets/desert_cat.webp",
+    label: "Desert",
+    icon: <GiCactus />,
+    description: "This property is in the desert!",
+  },
+  {
+    img: "assets/barn_cat.jpg",
+    label: "Barns",
+    icon: <GiBarn />,
+    description: "This property is in a barn!",
+  },
+  {
+    img: "assets/lux_cat.jpg",
+    label: "Luxury",
+    icon: <IoDiamond />,
+    description: "This property is brand new and luxurious!",
+  },
 ];
 
 export const types = [

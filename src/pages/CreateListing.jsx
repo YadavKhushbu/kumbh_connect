@@ -9,6 +9,8 @@ import variables from "../styles/variables.scss"
 import { BiTrash } from 'react-icons/bi'
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer"
+
 export const CreateListing = () => {
     const [category,setCategory] = useState("")
     const [type,setType] = useState("")
@@ -30,7 +32,7 @@ export const CreateListing = () => {
         });
       };
 
-      const [guestCount, setGuestCount] = useState(1);
+  const [guestCount, setGuestCount] = useState(1);
   const [bedroomCount, setBedroomCount] = useState(1);
   const [bedCount, setBedCount] = useState(1);
   const [bathroomCount, setBathroomCount] = useState(1);
@@ -366,6 +368,8 @@ export const CreateListing = () => {
           </button>
         </form>
     </div>
+
+    <Footer />
     </>
   )
 }

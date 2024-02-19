@@ -8,8 +8,8 @@ import "react-date-range/dist/theme/default.css";
 import { DateRange } from "react-date-range";
 import Loader from "../components/Loader";
 import Navbar from "../components/Navbar";
-//import { useSelector } from "react-redux";
-//import Footer from "../components/Footer"
+import { useSelector } from "react-redux";
+import Footer from "../components/Footer"
 
 const ListingDetails = () => {
   const [loading, setLoading] = useState(true);
@@ -36,9 +36,8 @@ const ListingDetails = () => {
 
   useEffect(() => {
     getListingDetails();
+    // eslint-disable-next-line
   }, []);
-
-  console.log(listing)
 
 
   /* BOOKING CALENDAR */
@@ -59,7 +58,7 @@ const ListingDetails = () => {
   const end = new Date(dateRange[0].endDate);
   const dayCount = Math.round(end - start) / (1000 * 60 * 60 * 24); // Calculate the difference in day unit
 
-  /* SUBMIT BOOKING 
+  /* SUBMIT BOOKING */
   const customerId = useSelector((state) => state?.user?._id)
 
   const navigate = useNavigate()
@@ -89,7 +88,7 @@ const ListingDetails = () => {
     } catch (err) {
       console.log("Submit Booking Failed.", err.message)
     }
-  } */
+  } 
 
   return loading ? (
     <Loader />
@@ -104,10 +103,11 @@ const ListingDetails = () => {
         </div>
 
         <div className="photos">
-          {listing.listingPhotoPaths?.map((item) => (
+          {listing.listingPhotoPaths?.map((item,index) => (
             <img
+              key={index}
               src={`http://localhost:3001/${item.replace("public", "")}`}
-              alt="listing photo"
+              alt="listing_photo"
             />
           ))}
         </div>
@@ -127,7 +127,7 @@ const ListingDetails = () => {
             src={`http://localhost:3001/${listing.creator.profileImagePath.replace(
               "public",
               ""
-            )}`}
+            )}`} alt="profile_imaage"
           />
           <h3>
             Hosted by {listing.creator.firstName} {listing.creator.lastName}
@@ -179,14 +179,14 @@ const ListingDetails = () => {
               <p>Start Date: {dateRange[0].startDate.toDateString()}</p>
               <p>End Date: {dateRange[0].endDate.toDateString()}</p>
 
-              <button className="button" type="submit">
+              <button className="button" type="submit" onClick={handleSubmit}>
                 BOOKING
               </button>
             </div>
           </div>
         </div>
       </div>
-
+      <Footer />
     </>
   );
 };
