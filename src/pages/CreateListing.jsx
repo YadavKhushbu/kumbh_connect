@@ -20,8 +20,8 @@ export const CreateListing = () => {
         streetAddress: "",
         aptSuite: "",
         city: "",
-        province: "",
-        country: "",
+        //province: "",
+        //country: "",
       });
 
       const handleChangeLocation = (e) => {
@@ -101,8 +101,8 @@ export const CreateListing = () => {
           listingForm.append("streetAddress", formLocation.streetAddress);
           listingForm.append("aptSuite", formLocation.aptSuite);
           listingForm.append("city", formLocation.city);
-          listingForm.append("province", formLocation.province);
-          listingForm.append("country", formLocation.country);
+          //listingForm.append("province", formLocation.province);
+          //listingForm.append("country", formLocation.country);
           listingForm.append("guestCount", guestCount);
           listingForm.append("bedroomCount", bedroomCount);
           listingForm.append("bedCount", bedCount);
@@ -192,23 +192,23 @@ export const CreateListing = () => {
 
                 </div>
                 <div className='location'>
-                    <p>City</p>
+                    <p>Nearby Place</p>
                     <input type='text' placeholder='City' name='city' value={formLocation.city} onChange={handleChangeLocation} required/>
 
                 </div>
               </div>
-              <div className='half'>
-                <div className='location'>
+               {/* <div className='half'> */}
+                {/* <div className='location'>
                     <p>Province</p>
                     <input type='text' placeholder='Province' name='province' value={formLocation.province} onChange={handleChangeLocation} required/>
 
-                </div>
-                <div className='location'>
+                </div>  */}
+                {/* <div className='location'>
                     <p>Country</p>
                     <input type='text' placeholder='Country' name='country' value={formLocation.country} onChange={handleChangeLocation} required/>
 
                 </div>
-              </div>
+              </div> */}
 
               <h3>Share Some Basic about your place</h3>
               <div className='basics'>
@@ -357,7 +357,7 @@ export const CreateListing = () => {
                 <p>Highlight details</p>
                 <textarea type="text" placeholder="Highlight details" name="highlightDesc"   value={formDescription.highlightDesc} onChange={handleChangeDescription} required/>
                 <p>Now, set your PRICE</p>
-                <span>$</span>
+                <span>Rs</span>
                 <input type="number" placeholder="100" name="price" className="price"   value={formDescription.price} onChange={handleChangeDescription} required/>
 
                 </div>

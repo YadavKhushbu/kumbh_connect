@@ -113,8 +113,8 @@ const ListingDetails = () => {
         </div>
 
         <h2>
-          {listing.type} in {listing.city}, {listing.province},{" "}
-          {listing.country}
+          {listing.type} in {listing.streetAddress}, {listing.aptSuite},{" "}
+          {listing.city}
         </h2>
         <p>
           {listing.guestCount} guests - {listing.bedroomCount} bedroom(s) -{" "}
@@ -167,11 +167,11 @@ const ListingDetails = () => {
               <DateRange ranges={dateRange} onChange={handleSelect} />
               {dayCount > 1 ? (
                 <h2>
-                  ${listing.price} x {dayCount} nights
+                  Rs{listing.price} x {dayCount} nights
                 </h2>
               ) : (
                 <h2>
-                  ${listing.price} x {dayCount} night
+                  Rs{listing.price} x {dayCount} night
                 </h2>
               )}
 

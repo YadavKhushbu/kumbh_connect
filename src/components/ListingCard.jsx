@@ -13,9 +13,11 @@ const ListingCard = ({
   listingId,
   creator,
   listingPhotoPaths,
+  streetAddress,
+  aptSuite,
   city,
-  province,
-  country,
+  //province,
+  //country,
   category,
   type,
   price,
@@ -79,7 +81,7 @@ const ListingCard = ({
             <div key={index} className="slide">
               <img
                 src={`http://localhost:3001/${photo?.replace("public", "")}`}
-                alt={`photo ${index + 1}`}
+                alt={`${index + 1}`}
               />
               <div
                 className="prev-button"
@@ -105,7 +107,7 @@ const ListingCard = ({
       </div>
 
       <h3>
-        {city}, {province}, {country}
+      {streetAddress}, {aptSuite}, {city}
       </h3>
       <p>{category}</p>
 
@@ -113,7 +115,7 @@ const ListingCard = ({
         <>
           <p>{type}</p>
           <p>
-            <span>${price}</span> per night
+            <span>Rs{price}</span> per night
           </p>
         </>
       ) : (

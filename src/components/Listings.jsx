@@ -62,9 +62,11 @@ const Listings = () => {
               _id,
               creator,
               listingPhotoPaths,
+              streetAddress,
+              aptSuite,
               city,
-              province,
-              country,
+              //province,
+              //country,
               category,
               type,
               price,
@@ -75,9 +77,11 @@ const Listings = () => {
                 listingId={_id}
                 creator={creator}
                 listingPhotoPaths={listingPhotoPaths}
+                streetAddress={streetAddress}
+                aptSuite={aptSuite}
                 city={city}
-                province={province}
-                country={country}
+                //province={province}
+                //country={country}
                 category={category}
                 type={type}
                 price={price}
